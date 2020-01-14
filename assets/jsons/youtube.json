@@ -1,0 +1,221 @@
+[
+    {
+        "fontColor": "black",
+"id": 14,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l785JsRUb9Bf3NT_Y2yIla9xx4Y3F2nxEwXU0g=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Crash course", 
+ "url":"https://www.youtube.com/channel/UCX6b17PVsYBQ0ip5gyeme-Q",
+ "categories": ["General"],
+ "description": "Tons of awesome courses in one awesome channel! Nicole Sweeney teaches you sociology, Carrie Anne Philbin teaches you computer science, Craig Benzine teaches film history, and Mike Rugnetta is teaching mythology! \n\nCheck out the playlists for past courses in physics, philosophy, games, economics, U.S. government and politics, astronomy, anatomy & physiology, world history, biology, literature, ecology, chemistry, psychology, and U.S. history."
+ },
+  {
+        "fontColor": "black",
+"id": 15,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l79JUllK_KvggxDbg1MTLFAS2BfoD4QN0ZyqiA=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Explaining Computers", 
+ "url":"https://www.youtube.com/channel/UCbiGcwDWZjz05njNPrJU7jA",
+ "categories": ["Computers" ],
+ "description": "\"ExplainingComputers uploads weekly computing videos. It is produced by Christopher Barnatt, who spent 25 years teaching computing and future studies in the University of Nottingham, and who is the author of thirteen books including \"Digital Genesis: The Future of Computing, Robots and AI\", \"3D Printing: Third Edition\" and \"The Next Big Thing\".\""
+ },
+ 
+  {
+        "fontColor": "black",
+"id": 16,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l7_cklcDqiTOOLQ3cssUfGweO6z7xU7QHZ9mrA=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"GreatScott!", 
+ "url":"https://www.youtube.com/channel/UC6mIxFTvXkWQVEHPsEdflzQ",
+ "categories": ["Computers" ],
+ "description": "Awesome Electronics Tutorials, Projects and How To´s"
+ },
+   {
+        "fontColor": "black",
+"id": 17,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l78T_3vy2GrbqROEtHhTb_X7UymsLpvroI18Bw=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"ElectroBOOM", 
+ "url":"https://www.youtube.com/channel/UCJ0-OtVpF0wOKEqT2Z1HEtA",
+ "categories": ["Computers" ],
+ "description": "\"Want to learn subconsciously while being entertained? Then subscribe!!\nFollow me on twitter: https://twitter.com/ElectroBOOMGuy\nand Facebook: http://www.facebook.com/ElectroBOOM\""
+ },
+   {
+        "fontColor": "black",
+"id": 18,
+
+
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l7_90_OopgqRNxh6zi7bhcOT8SHeQLbJDR1ZFQ=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"minutephysics", 
+ "url":"https://www.youtube.com/channel/UCUHW94eEFW7hkUMVaZz4eDg",
+ "categories": ["Math" ],
+ "description": "\"Simply put: cool physics and other sweet science.\n\n'If you can't explain it simply, you don't understand it well enough.'\n~Rutherford via Einstein? (wikiquote)\n\nCreated by Henry Reich"
+ },
+   {
+        "fontColor": "white",
+"id": 19,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l78WZLN2Z3fJWwxWJEFSTsNt9ru-apt0k5D5mg=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Lex Freidman", 
+ "url":"https://www.youtube.com/channel/UCSHZKyawb77ixDdsGog4iWA",
+ "categories": ["AI" ],
+ "description": "\"Videos exploring research topics in artificial intelligence, deep learning, autonomous vehicles, and beyond.\""
+ },
+   {
+ "fontColor": "black",
+"id": 20,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l78aqICcIC0AZLKo1GDDvYmIAtbAPmCSipDGiw=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Paul Davids", 
+ "url":"https://www.youtube.com/channel/UC_Oa7Ph3v94om5OyxY1nPKg",
+ "categories": ["Music" ],
+ "description": "\"A fun and inspiring guitar channel, dedicated to keep the guitar fresh and alive!  Quality guitar playing, beautiful arrangements, comparisons, lists, lessons, and other fun guitar related stuff from guitarist, producer and teacher Paul Davids.\""
+ },
+   {
+        "fontColor": "white",
+"id": 21,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l78AFyS6S0d-j36ZsnkHlOZHI6CHMsMatKPkOw=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Jon Bellion", 
+ "url":"https://www.youtube.com/channel/UCesblIDGtEt0UQ4gurl8vnw",
+ "categories": ["Music" ],
+ "description": ""
+ },
+
+   {
+        "fontColor": "black",
+"id": 22,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l78mj7JeAO5BP2BChvanMZI_CwgPYq-g7fXBUg=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Wintergatan", 
+ "url":"https://www.youtube.com/channel/UCcXhhVwCT6_WqjkEniejRJQ",
+ "categories": ["Music" ],
+ "description": "\"The Wintergatan youtube channel is a mix of Music, Engineering and Innovation.\n\nI release a new video Every Wednesday 16.00 GMT. Right now I am very focused on finishing the build of the Marble Machine X for the upcoming Album & World Tour!\""
+ },
+   {
+        "fontColor": "white",
+"id": 23,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l7_vzcOHoE01somM6NpHXkQR4epTHNRGQW6YrA=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Jabrils", 
+ "url":"https://www.youtube.com/channel/UCQALLeQPoZdZC4JNUboVEUg",
+ "categories": ["AI" ],
+ "description": "\"Yo! I'm Jabril(s) a full time candy consumer turned software developer & I build all types of software prototypes because I find it fun & am curious to see those projects come to life. The ONLY thing that I love more than developing software is sharing my lessons learned during developing, right here on my YouTube Channel!\""
+ },
+ {
+    "fontColor": "white",
+"id": 55,
+"imgUrl":"https://yt3.ggpht.com/a/AGF-l78e-mgg87R7m8KT3eMsXwzUPNXWCvvfJVdG=s288-c-k-c0xffffffff-no-rj-mo", 
+"name":"Mark Rober", 
+"url":"https://www.youtube.com/user/onemeeeliondollars/about",
+"categories": ["Science" ],
+"description": "\"Former NASA engineer.  Current YouTuber and friend of science.  \n\nAnswers to some common questions:\n\n1) I studied Mechanical Engineering in School.  I did my undergrad at BYU and Masters at USC.\n2) I worked for NASA JPL for 9 years, 7 of which were working on the Curiosity Rover (I made a video about it you should def totes watch cause it's probably my favorite of all my videos).  I founded a company called Digital Dudz on my nights and weekends while working at NASA (also made some videos about that) and sold it to the guys who make Morphsuits in the UK.  As part of the sale I quit my job at NASA and worked for them coming up with all their new costume ideas for 2 years.  Recently, I was presented with an opportunity to return to my Engineering roots to come do some ideation type of work for a tech company near San Francisco.   \n3) Link to free and therefore substandard build plans for my custom workbench can be found below."
+},{
+"fontColor": "white",
+"id": 56,
+"imgUrl":"https://yt3.ggpht.com/a/AGF-l79qi5YAvOj6ebtkB-jZMhziLo1j8IGDzUynYQ=s288-c-k-c0xffffffff-no-rj-mo", 
+"name":"Simone Giertz", 
+"url":"https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ/about",
+"categories": ["Science" ],
+"description": "\"Maker/robotics enthusiast/non-engineer. Have become somewhat of an expert in shitty robots.\n\nSwedish but sound American just to confuse you.\""},
+    {
+        "fontColor": "white",
+"id": 24,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l79V4LblHGweW2p2VQpDEsUMEgvbNlo_o4rciA=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"12tone", 
+ "url":"https://www.youtube.com/channel/UCTUtqcDkzw7bisadh6AOx5w",
+ "categories": ["Music" ],
+ "description": "\"something something music theory.\""
+ },
+    {
+        "fontColor": "white",
+"id": 25,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l78RivbTspXaUGCmw5lW_qj7-uQAV5dfzLDjQw=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Andrew Foy", 
+ "url":"https://www.youtube.com/channel/UCuNVQeVXwfwxVUKdrCQgk3A",
+ "categories": ["Music" ],
+ "description": "\"Hi I'm Andrew.  I'm 17 years old and live in Las Vegas, Nevada.  Thanks for checking out my fingerstyle guitar channel.\n\nFAQ:\nI'm half Korean half Caucasian\nPlaying since I was 9.\nI don't take lessons.\nI practice about 90-120 minutes everyday\nBorn: Sept 28, 2001"
+ },
+    {
+        "fontColor": "white",
+"id": 26,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l78avQgRgHwpa08YwHEmylI9nkSURriUpOqOFw=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"deeplizard", 
+ "url":"https://www.youtube.com/channel/UC4UJ26WkceqONNF5S26OiVw",
+ "categories": ["AI" ],
+ "description": "\"Building collective intelligence.\""
+ },
+    {
+        "fontColor": "white",
+"id": 27,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l78WRSVDCTysZpO8vGdwdrvpm6z-AiXKL-I4Gw=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"3Blue1Brown", 
+ "url":"https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw",
+ "categories": ["Math" ],
+ "description": "\"3blue1brown, by Grant Sanderson, is some combination of math and entertainment, depending on your disposition. The goal is for explanations to be driven by animations and for difficult problems to be made simple with changes in perspective.\""
+ },
+{
+        "fontColor": "white",
+"id": 27,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l7_2ix6FDwgjIuaOWCLjNY4jLoiKpRzRrHrqSQ=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Ben Eater", 
+ "url":"https://www.youtube.com/channel/UCS0N5baNlQWJCUrhCEo8WlA",
+ "categories": ["Computers" ],
+ "description": "\"Subscribe to see tutorial-style videos about electronics, computer architecture, networking, and various other technical subjects. If you want to see more on a particular subject, leave a comment and I'll try my best to add more.\""
+ },
+  {
+        "fontColor": "white",
+"id": 28,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l794YutLAIBViPU2AeZCfNBRzzDjeC7FVX96Rw=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Physics Girl", 
+ "url":"https://www.youtube.com/channel/UC7DdEm33SyaTDtWYGO2CwdA",
+ "categories": ["Math" ],
+ "description": "\"Physics Girl is a YouTube channel created by Dianna Cowern that adventures into the physical sciences with experiments, demonstrations, and cool new discoveries. Physics Girl has videos for every atom and eve.\""
+ },
+ {
+    "fontColor": "white",
+"id": 60,
+"imgUrl":"https://yt3.ggpht.com/a/AGF-l79tD4qP9-464G80Opgra7dUtLGC1va2PKuE9A=s288-c-k-c0xffffffff-no-rj-mo", 
+"name":"SmarterEveryDay ", 
+"url":"https://www.youtube.com/user/destinws2/featured",
+"categories": ["Math" ],
+"description": "\"I explore the world using science.  That's pretty much all there is to it.  Watch 2 videos. If you learn something AWESOME, please subscribe if you feel like I earned it.\""
+},
+{
+ "fontColor": "white",
+ "id": 28,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l7-pua7Fy8XOjLK1YFSfB_HH0q0C28S5ZBlrXg=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Eddie Woo", 
+ "url":"https://www.youtube.com/channel/UCq0EGvLTyy-LLT1oUSO_0FQ",
+ "categories": ["Math" ],
+ "description": "Currently Head Teacher Mathematics in a comprehensive public school in Sydney, Australia. \nI think learning is awesome, and love being able to share what I've learned with others!\n\nMore information about me and my work here: http://misterwootube.com/about/\""
+ },
+
+   {
+ "fontColor": "white",
+ "id": 29,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l79_o6QngIpSSvxjU7AnZu86z3_7OzCy-wn2Bw=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Kurzgesagt – In a Nutshell", 
+ "url":"https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q",
+ "categories": ["Science" ],
+ "description": "Videos explaining things with optimistic nihilism. \n\nWe are a small team who want to make science look beautiful. Because it is beautiful. \n\nCurrently we make one animation video per month. Follow us on Twitter, Facebook to get notified when a new one comes out."
+ },
+ {
+    "fontColor": "white",
+    "id": 29,
+    "imgUrl":"https://yt3.ggpht.com/a/AGF-l7--fj_H_fmegYJP4fFFIYAGJc_whyRmjEFpBw=s288-c-k-c0xffffffff-no-rj-mo", 
+    "name":"Steve Mould", 
+    "url":"https://www.youtube.com/user/steventhebrave/about",
+    "categories": ["Science" ],
+    "description": "\"I make videos about science.\n\nI also write books! You can get them here: https://stevemould.com/books\""
+    },
+{
+ "fontColor": "white",
+ "id": 30,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l79wQuzSpaou1Pd5O7Cfj9rU2rkzcg0XWSaATw=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Samurai Guitarist", 
+ "url":"https://www.youtube.com/channel/UCj1Jtb8xLUzFAm8J-Q1e1MQ",
+ "categories": ["Music" ],
+ "description": "\"Guitarist/Songwriter/Samurai\n\nBorn in the Manitoba prefecture of Canada, samuraiguitarist, honed his discipline under the study of the country's most powerful musical sensei.\n\nBred on rock, raised on the blues, trained in jazz, samuraiguitarist creates incredibly innovative videos that showcase his talents on the guitar.\""
+ },
+ {
+ "fontColor": "white",
+ "id": 31,
+ "imgUrl":"https://yt3.ggpht.com/a/AGF-l7-R3Tc4G_czapy8OYUHlTgphrotACM6n-Vqxg=s288-c-k-c0xffffffff-no-rj-mo", 
+ "name":"Andrew Huang", 
+ "url":"https://www.youtube.com/channel/UCdcemy56JtVTrsFIOoqvV8g",
+ "categories": ["Music" ],
+ "description": "Description\n\"I'm a partially deaf music producer working with lots of different genres and instruments. I also like making music with things that aren't instruments, like balloons and carrots. Based in Toronto. 40+ albums out which you can find at the links below.\n"
+ }
+]

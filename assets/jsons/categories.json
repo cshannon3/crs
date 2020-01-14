@@ -1,0 +1,69 @@
+[{
+        "name": "Neuroscience",
+        "color": "green",
+        "id": 0
+    },
+
+    {
+        "name": "AI",
+        "color": "red",
+        "id": 2
+    },
+    {
+        "name": "Math",
+        "color": "amber",
+        "id": 3
+    },
+    {
+        "name": "Music",
+        "color": "purple",
+        "id": 4
+    },
+    {
+        "name": "General",
+        "color": "orange",
+        "id": 5
+    },
+    {
+        "name": "Computers",
+        "color": "cyan",
+        "id": 6
+    },
+    
+    {
+    "name":"Education",
+    "color":"indigo",
+    "id":8
+    },
+    {
+        "name":"Psychology",
+        "color":"lime",
+        "id":9
+    },
+    {
+        "name":"Business",
+        "color":"lightBlue",
+        "id":10
+    },
+    {
+        "name":"Science",
+        "color":"lightGreen",
+        "id":11
+    },
+    {
+        "name":"History",
+        "color":"teal",
+        "id":12
+    },
+    {
+        "name":"UI",
+        "color":"grey",
+        "id":13
+    },
+    {
+        "name":"Systems",
+        "color":"pink",
+        "id":13
+    }
+
+]

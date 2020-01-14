@@ -1,0 +1,150 @@
+
+[
+    {
+      "id": 0,
+       "fontColor":"black",
+         "imgUrl":"https://thebrain.mcgill.ca/flash/d/d_06/d_06_cr/d_06_cr_mou/d_06_cr_mou_4a.jpg", 
+         "name":"The Brain McGill", 
+         "url":"https://thebrain.mcgill.ca/index.php",
+         "categories": ["Neuroscience"],
+         "description": ""
+         },
+         {
+         "id": 1,
+         "fontColor":"black",
+         "imgUrl":"http://what-when-how.com/wp-content/uploads/2011/08/tmp314_thumb.jpg", 
+         "name":"Network Models", 
+         "url":"https://what-when-how.com/data-communications-and-networking/network-models-data-communications-and-networking/",
+         "categories": ["Computers"],
+         "description": ""
+ 
+         },
+         {
+      "id": 2,
+      "fontColor":"black",
+         "imgUrl":"http://networksciencebook.com/images/ch-01/figure-1-6.jpg", 
+         "name":"Network Science", 
+         "url":"http://networksciencebook.com/",
+         "categories": ["Computers"],
+         "description": ""
+         },
+         {  
+      "id": 3,
+         "imgUrl":"https://www.thevirtualbrain.org/tvb/static/style/img/logo_tvb_main.svg", 
+         "name":"Virtual Brain", 
+         "url":"https://www.thevirtualbrain.org/tvb/zwei/brainsimulator-software",
+         "categories": ["Neuroscience", "AI"],
+         "description": ""
+         },
+         {
+      "id": 4,
+         "imgUrl":"https://agi.io/wp-content/uploads/2019/10/logo-inverse-brown.png", 
+         "name":"Project AGI", 
+         "url":"https://agi.io/",
+         "categories": ["AI"],
+         "description": ""
+         },
+         {
+      "id": 5,
+         "imgUrl":"https://i1.wp.com/portal.bluebrain.epfl.ch/wp-content/uploads/2019/07/BBP_megapaper_header_homepage_1.jpg", 
+         "name":"Blue Brain Portal", 
+         "url":"https://portal.bluebrain.epfl.ch/",
+         "categories": ["Neuroscience"],
+         "description": ""
+         },
+          {
+      "id": 6,
+       "fontColor":"blue",
+         "imgUrl":"https://avatars2.githubusercontent.com/u/22019253?s=200&v=4", 
+         "name":"Distill", 
+         "url":"https://distill.pub/",
+         "categories": ["AI"],
+         "description": ""
+         },
+          {
+      "id": 7,
+         "imgUrl":"https://www.asimovinstitute.org/wp-content/uploads/2019/04/AsinRound-300x300.png", 
+         "name":"The Asimov Institute", 
+         "url":"https://www.asimovinstitute.org",
+         "categories": ["AI"],
+         "description": "Favorite Articles: \n\n-#linkhttps://www.asimovinstitute.org/neural-network-zoo-prequel-cells-layers/##colorblue#Neural Network Zoo Prequel Cells Layers#/color##/link#\n-#linkhttps://www.asimovinstitute.org/analyzing-deep-learning-tools-music/##colorblue#Analyzing Six Deep Learning Tools For Music Generation#/color##/link#"
+         },
+          {
+      "id": 9,
+       "fontColor":"black",
+         "imgUrl":"https://lh3.googleusercontent.com/vOToo-3knoqpS4oL0YpNZG5EN93aH5TPhwH4tdCqP_tIpPw8fiRKycf5H-EpPquZwhU=s180", 
+         "name":"Hook Theory", 
+         "url":"https://www.hooktheory.com/trends",
+         "categories": ["Music"],
+         "description": ""
+         },
+         {
+      "id": 10,
+         "imgUrl":"https://magenta.tensorflow.org/assets/magenta-logo-bottom-text.png", 
+         "name":"Magenta", 
+         "url":"https://magenta.tensorflow.org/demos/community/",
+      
+         "categories": ["Music","AI" ],
+         "description": ""
+         },
+         {
+      "id": 11,
+         "imgUrl":"https://149366099.v2.pressablecdn.com/wp-content/uploads/2019/03/FarnamStreet_Icon_NoBackground-copy.png", 
+         "name":"Farnam Street", 
+         "url":"https://fs.blog/",
+         "categories": ["General" ],
+         "description": ["Farnam Street is a blog and the creator of \"The Knowledge Project\" podcast. They focus on distilling the wisdom from the countless books they have read and through interviews with successful people from every discipline. If you like Tim Ferris, you will also like Farnam Street.",
+
+ "Favorite Articles\n- #linkhttps://fs.blog/2016/04/munger-operating-system/##size16##italic#The Munger Operating System#/color##/link##/italic#",
+"\n- #linkhttps://fs.blog/2016/06/value-grey-thinking/##size16##italic#The Value of Grey Thinking#/color##/link##/italic#\n - #linkhttps://fs.blog/2016/08/daniel-pink-two-types-of-motivation/##size16##italic#Daniel Pink on Incentives and the Two Types of Motivation#/color##/link##/italic# "
+         ]
+},
+          {
+      "id": 12,
+      "fontColor": "black",
+         "imgUrl":"https://stratechery.com/wp-content/uploads/2018/03/stratechery-logomark.png", 
+         "name":"Stratechery", 
+         "url":"https://stratechery.com/",
+         "categories": ["General" ],
+         "description": "Favorite Articles: \n\n-#linkhttps://stratechery.com/2019/shopify-and-the-power-of-platforms/##colorblue#Shopify and the Power of Platforms#/color##/link#\n-#linkhttps://stratechery.com/2019/the-2019-stratechery-year-in-review/##colorblue#The 2019 Stratechery Year in Review#/color##/link#"
+         },
+             {
+                "fontColor": "black",
+      "id": 13,
+         "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Y_Combinator_logo.svg/1200px-Y_Combinator_logo.svg.png", 
+         "name":"Paul Graham", 
+         "url":"http://www.paulgraham.com/articles.html",
+         "categories": ["General" ],
+         "description": "Favorite Articles: \n\n-#linkhttp://www.paulgraham.com/essay.html##colorblue#Age of Essays#/color##/link#\n-#linkhttp://www.paulgraham.com/hs.html##colorblue#What You'll Wish You'd Known#/color##/link#"
+         },
+         {
+            "fontColor": "black",
+  "id": 14,
+     "imgUrl":"https://s3-us-west-1.amazonaws.com/pioneer-blog/2018/10/logo-4.png", 
+     "name":"Daniel Gross", 
+     "url":"https://dcgross.com/",
+     "categories": ["General" ],
+     "description": "Favorite Articles: \n\n-#linkhttps://dcgross.com/accomplish-dread-tasks/##colorblue#How To Overcome Dread Tasks#/color##/link#\n-#linkhttps://dcgross.com/feedback-loops/##colorblue#Feedback Loops#/color##/link#"
+     },
+     {
+      "fontColor": "black",
+"id": 14,
+"imgUrl":"https://cdn.shopify.com/s/files/1/0306/3653/files/Wait-But-Why_2048x.png?v=1517029055", 
+"name":"Wait By Why", 
+"url":"https://waitbutwhy.com/",
+"categories": ["General" ],
+"description": "Favorite Articles: \n\n-#linkhttps://waitbutwhy.com/2018/04/picking-career.html##colorblue#How to Pick a Career (That Actually Fits You)#/color##/link#\n-#linkhttps://waitbutwhy.com/2019/09/thinking-ladder.html##colorblue#The Thinking Ladder#/color##/link#"
+},
+{
+   "fontColor": "black",
+"id": 14,
+"imgUrl":"https://i1.wp.com/tim.blog/wp-content/uploads/2014/04/timferrissshowart-1400x1400.jpg?fit=1200%2C1200&ssl=1", 
+"name":"Tim Ferris", 
+"url":"https://tim.blog/",
+"categories": ["General" ],
+"description": "Favorite Podcasts: \n\n-#linkhttps://tim.blog/2019/03/15/safi-bahcall-loonshots/##colorblue#Safi Bahcall — On Thinking Big, Curing Cancer, and Transforming Industries#/color##/link#\n-#linkhttps://tim.blog/guest/adam-grant/##colorblue#Adam Grant — The Man Who Does Everything#/color##/link#\n-#linkhttps://tim.blog/guest/ann-miura-ko/##colorblue#Ann Miura-Ko — The Path from Shyness to World-Class Debater and Investor#/color##/link#"
+}
+     
+      
+]
+ 
