@@ -33,6 +33,7 @@ Widget onNewChild()=>ActiveCommentWidget(comment: Comment(),);
     d.rootBox.isRoot = true;
    
     widget.comments.forEach((c){
+      print(c.comment);
         d.rootBox.childrenBoxes.add(GuiBox(LRTB(0.0, 0.25, .25, 0.5), 
         color: Colors.yellow[200],
         onNewChild: onNewChild,

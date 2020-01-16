@@ -31,7 +31,10 @@ class PaintDemo extends StatelessWidget {
 
     return Stack(
       children: <Widget>[
-        paintArea,
+        Padding(
+          padding: const EdgeInsets.only(top:50.0),
+          child: paintArea,
+        ),
          Align(alignment: Alignment.bottomCenter,
         child:strokeWidthSlider),
           Align(

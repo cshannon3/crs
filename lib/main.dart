@@ -22,7 +22,6 @@ import 'package:cshannon3/comments/comment_overlay.dart';
 import 'package:cshannon3/menu.dart';
 import 'package:cshannon3/screens/paint/paint_screen.dart';
 import 'package:cshannon3/secrets.dart';
-import 'package:cshannon3/theming.dart';
 import 'package:firebase/firestore.dart';
 import 'package:firebase/firebase.dart' as fb;
 
@@ -31,6 +30,7 @@ import 'package:cshannon3/state_manager.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 //import 'package:google_sign_in/google_sign_in.dart';
 
 void main() async{
@@ -106,7 +106,7 @@ bool showPaint=false;
   }
   
   Widget commentsWidget(){
-    print(stateManager.currentRoute);
+ 
     return Container(
       height: double.infinity,
       width: double.infinity,
@@ -122,7 +122,7 @@ bool showPaint=false;
                             return new Text('Loading...');
                           default:
                             return CommentsOverlay(
-
+                              initShowing: showFeedback,
                               comments:snapshot.data.docs.where((doc)=>doc.data()['screen']==stateManager.currentRoute)
                                 .map((DocumentSnapshot document) {
                                   print( document.data());
@@ -137,20 +137,26 @@ bool showPaint=false;
                   ),
     );
   }
-
-
   @override
   Widget build(BuildContext context) {
 
     stateManager.setScale(MediaQuery.of(context).size);
     return Scaffold(
       body: Container(
-        decoration: mainBackground,
+        decoration:  BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  Color.fromRGBO(0, 11, 200, 1.0),
+                  Color.fromRGBO(0, 0, 200, 0.2)
+                ]),),
+       // mainBackground,
         child: Stack(
           children: <Widget>[
+        
             Positioned.fromRect(
         rect: stateManager.sc.mainArea(),
-        //  
         child:  stateManager.getScreen(),
         //stateManager.mainPage(),
             ),
@@ -163,11 +169,36 @@ bool showPaint=false;
           menuFontSize: stateManager.sc.getMenuFontSize(),
           changeScreen: stateManager.changeScreen,
         ),
-      //  commentsWidget(),
-        // showPaint?SizedBox.fromSize(
-        //   size:MediaQuery.of(context).size,
-        //   child: PaintDemo(),
-        // ):Container()
+        commentsWidget(),
+        showPaint?SizedBox.fromSize(
+          size:MediaQuery.of(context).size,
+          child: PaintDemo(),
+        ):Container(),
+            Positioned(
+             right: MediaQuery.of(context).size.width-100.0,
+             top: 0.0,
+             height: 50.0,
+             width: 250.0,
+              child: Container(
+                width: 250.0,
+                child: Row(children: <Widget>[
+                  IconButton(onPressed: (){
+                    setState(() {
+                      showPaint=!showPaint;
+                    });
+                  },
+                  icon: Icon(
+                    FontAwesomeIcons.paintBrush
+                  ),
+                  ),
+                IconButton(onPressed: (){     setState(() {
+                      showFeedback=!showFeedback;
+                    });},
+                  icon: Icon(FontAwesomeIcons.comments),
+                  ),
+                ],),
+              ),
+            ),
           ],
         ),
       ),

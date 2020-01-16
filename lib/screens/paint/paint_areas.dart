@@ -23,6 +23,7 @@ class _PaintAreaState extends State<PaintArea> {
   // use this to index paintLayers
   List<int> paintLayerOrder = [];
   String img;
+  bool ba=false;
   // shape or line layer is the index of the paint order list
   // and shape or coloredLine index is the actual value,
   // the shape index will be the negative version -1
@@ -108,56 +109,68 @@ class _PaintAreaState extends State<PaintArea> {
     // Making Grid ..
     Size screenSize = MediaQuery.of(context).size;
 
-    return SizedBox.fromSize(
-      size: MediaQuery.of(context).size,
-      child: Stack(
-        children: [
+    return Container(
+      color: ba?Colors.white:null,
+      child: SizedBox.fromSize(
+        size: MediaQuery.of(context).size,
+        child: Stack(
+          children: [
 
+        
+           Align(alignment:Alignment.center,child: 
+          SizedBox.fromSize(
+             size: screenSize,
+             child: (img==null)?Container(): Opacity(
+               opacity: 0.5,
+               child: Image.network(img,fit: BoxFit.fill)),
+           ),),
+           
       
-         Align(alignment:Alignment.center,child: 
-        SizedBox.fromSize(
-           size: screenSize,
-           child: (img==null)?Container(): Opacity(
-             opacity: 0.5,
-             child: Image.network(img,fit: BoxFit.fill)),
-         ),),
-         
-    
-        ]
-          ..addAll(paintLayers)
-          ..add(activePaintArea)
-          ..add(
+          ]
+            ..addAll(paintLayers)
+            ..add(activePaintArea)
+            ..add(
   Align(alignment: Alignment.topLeft,
-            child: Row(children: <Widget>[
-              FlatButton(child: Text("Blank"),onPressed: (){
-                setState(() {
-                  img=null;
-                });
-              },),
-              FlatButton(child: Text("Beach"),onPressed: (){
-                print("press");
-                img="https://i.ytimg.com/vi/B1T06UhcX0Q/maxresdefault.jpg";
-                setState(() {
-                  
-                });
-              },),
-              FlatButton(child: Text("Mountians"),onPressed: (){
-                img= "https://imagevars.gulfnews.com/2018/12/11/RDS_181211_Pakistan's_mountains_1_16a0853f269_large.jpg";
-                  
-                setState(() {
-                  
-                });
-              },),
-              FlatButton(child: Text("Dots"),onPressed: (){
-                img="http://getdrawings.com/images/connect-the-dot-drawing-4.gif";
-              //  "https://imagevars.gulfnews.com/2018/12/11/RDS_181211_Pakistan's_mountains_1_16a0853f269_large.jpg";
-                  
-                setState(() {
-                  
-                });
-              },),
-            ],),)
-          )
+              child: Row(children: <Widget>[
+                FlatButton(child: Text("A", style: TextStyle(color: Colors.white),),onPressed: (){
+                  setState(() {
+                    img=null;
+                    ba=false;
+                  });
+                },),
+                FlatButton(child: Text("B", style: TextStyle(color: Colors.white),),onPressed: (){
+                  setState(() {
+                    img=null;
+                     ba=true;
+                  });
+                },),
+                FlatButton(child: Text("C", style: TextStyle(color: Colors.white),),onPressed: (){
+                  print("press");
+                  img="https://i.ytimg.com/vi/B1T06UhcX0Q/maxresdefault.jpg";
+                  setState(() {
+                     ba=true;
+                    
+                  });
+                },),
+                FlatButton(child: Text("D", style: TextStyle(color: Colors.white),),onPressed: (){
+                  img= "https://imagevars.gulfnews.com/2018/12/11/RDS_181211_Pakistan's_mountains_1_16a0853f269_large.jpg";
+                    
+                  setState(() {
+                     ba=true;
+                    
+                  });
+                },),
+                FlatButton(child: Text("E", style: TextStyle(color: Colors.white),),onPressed: (){
+                  img="http://getdrawings.com/images/connect-the-dot-drawing-4.gif";
+                //  "https://imagevars.gulfnews.com/2018/12/11/RDS_181211_Pakistan's_mountains_1_16a0853f269_large.jpg";
+                    
+                  setState(() {
+                    
+                  });
+                },),
+              ],),)
+            )
+        ),
       ),
     );
   }

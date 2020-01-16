@@ -11,6 +11,7 @@ description: A new Flutter project.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+
 version: 1.0.0+1
 
 environment:
@@ -22,7 +23,9 @@ dependencies:
   
   firebase: any
   firebase_auth:
+  google_fonts: ^0.3.2
   video_player: ^0.10.4
+  font_awesome_flutter:
   video_player_web:
     git:
       url: git://github.com/flutter/plugins.git

@@ -13,6 +13,7 @@ import 'package:cshannon3/theming.dart';
 import 'package:cshannon3/utils/model_builder.dart';
 import 'package:cshannon3/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 
@@ -34,7 +35,7 @@ class _BubblesState extends State<Bubbles>  with TickerProviderStateMixin {
   CurvedAnimation decelerate, fastIn, easeIn;
  CustomModel centerItem, activeItem;
 
- List<String> types= [ "site", "youtube"];
+ List<String> types= [ "site", "youtube", "books"];
  String viewType="bubbles";
  var lis;
  Rect centerRect, bubbleBox;//ScaleController sc;
@@ -177,17 +178,21 @@ _setCurves(){
         ),
         child: Center(
         //  alignment: Alignment.center,
-          child: cb.vars["size"]==1?Text(cb.vars["name"], style: TextStyle(color: Colors.white, fontSize: 12.0),):
-          Column(
-           mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Expanded(child: Container(),),
-              IconButton(icon: Icon(Icons.add),color: Colors.white, onPressed: (){},),
-              Text(cb.vars["name"], style: TextStyle(color: Colors.white, fontSize: 12.0),),
-              IconButton(icon: Icon(Icons.minimize),color: Colors.white,onPressed: (){},),
-              Expanded(child: Container(),),
-            ],
-          )),),
+          //child: cb.vars["size"]==1?
+          child: Text(cb.vars["name"], style: fsSm
+          //TextStyle(color: Colors.white, fontSize: 12.0),
+          )
+          // Column(
+          //  mainAxisAlignment: MainAxisAlignment.center,
+          //   children: <Widget>[
+          //     Expanded(child: Container(),),
+          //     IconButton(icon: Icon(Icons.add),color: Colors.white, onPressed: (){},),
+          //     Text(cb.vars["name"], style: TextStyle(color: Colors.white, fontSize: 12.0),),
+          //     IconButton(icon: Icon(Icons.minimize),color: Colors.white,onPressed: (){},),
+          //     Expanded(child: Container(),),
+          //   ],
+          // )
+          ),),
       )
       );
   }
@@ -433,69 +438,122 @@ setActive(CustomModel newNode){//ItemNode newNode){
 }
 
 
-Widget typeMenu(){
-  List<Widget> out=[["Projects","project"],["Sites","site"],["Books,""book"], ["Youtube","youtube"]].map((f){
-         return  FlatButton(
-               color: types.contains(f[1])?Colors.grey.withOpacity(0.5):null,
+Widget tileLayout(){
+
+ return Padding(
+   padding: const EdgeInsets.only(top:80.0),
+   child: GridView.count(
+                  crossAxisCount:(widget.stateManager.sc.w()/180.0).floor(),
+                  children: itemNodes.where((b)=>(types.contains(b.vars["type"]))).map((n){
+          return MyTile(modelData: n,);
+        }).toList()),
+ );
+}
+Widget bubbleLayout(){
+
+  return Stack(children: [
+
+       
+      ]..addAll(categoryWidgets)..addAll(nodeWidgets)..addAll(activeWidgets)
+      );
+       
+}
+   
+  @override
+  Widget build(BuildContext context) {
+    return 
+     Stack(
+       children: <Widget>[
+           viewType=="bubbles"?bubbleLayout():tileLayout(),
+         Positioned(
+           left: 0.0,
+           width: 300.0,
+           height: 60.0,
+           top: 0.0,
+           child: Column(
+             children: <Widget>[
+               Container(
+                 height: 30.0,
+                 child: Row(children: <Widget>[
+                   FlatButton(
+                   color: viewType=="bubbles"?Colors.grey.withOpacity(0.5):null,
+                  onPressed: (){
+                   viewType="bubbles";
+                    _getModels();
+                    _sizeWidgets();
+                    setState(() {
+                    });
+                  }, child: Text("Bubbles",style: fsMed,),
+
+                ),
+                FlatButton(
+                   color: viewType=="tiles"?Colors.grey.withOpacity(0.5):null,
+                  onPressed: (){
+                   viewType="tiles";
+                    _getModels();
+                    _sizeWidgets();
+                    setState(() {
+                    });
+                  }, child: Text("Tiles",style: fsSm,),
+
+                )
+                 ],),
+               ),
+               Container(
+                 height: 30.0,
+                 child: Row(children: <Widget>[
+                     IconButton(
+              icon: Icon(FontAwesomeIcons.internetExplorer),
+               color: types.contains("sites")?Colors.grey.withOpacity(0.5):null,
               onPressed: (){
-               if( types.contains("project"))types.remove("project");
-               else types.add(f[1]);
+               if( types.contains("sites"))types.remove("sites");
+               else types.add("sites");
+                _getModels();
+                _sizeWidgets();
+                setState(() {
+                });
+              }, //child: Text("Sites",style: fsSm,),
+
+            ),
+         IconButton(
+              icon: Icon(FontAwesomeIcons.book),
+               color: types.contains("books")?Colors.grey.withOpacity(0.5):null,
+              onPressed: (){
+               if( types.contains("books"))types.remove("books");
+               else types.add("books");
                 _getModels();
                 _sizeWidgets();
                 setState(() {
                   
                 });
-              }, child: Text(f[0]),
+              }, //child: Text("Books",style: fsSm,),
 
-            );
-          }).toList();
-      //    out.add( Expanded(child: Container(),));
-    [["Bubbles","bubbles"],["Lists","lists"],["Tiles,""tiles"]].forEach((g){
-       out.add(FlatButton(
-               color: viewType==g[1]?Colors.grey.withOpacity(0.5):null,
+            ),
+            IconButton(
+              icon: Icon(FontAwesomeIcons.youtube),
+               color: types.contains("youtube")?Colors.grey.withOpacity(0.5):null,
               onPressed: (){
-               viewType=g[1];
+               if( types.contains("youtube"))types.remove("youtube");
+               else types.add("youtube");
                 _getModels();
                 _sizeWidgets();
                 setState(() {
+                  
                 });
-              }, child: Text(g[0]),
+              }, //child: Text("Youtube",style: fsSm,  ),
 
-            ));
-
-    });
-     
-  return Row(
-          children: out
-  );
-
-}
-Widget tileLayout(){
-
- return GridView.count(
-                crossAxisCount:(widget.stateManager.sc.w()/180.0).floor(),
-                children: itemNodes.where((b)=>(types.contains(b.vars["type"]))).map((n){
-        return MyTile(modelData: n,);
-      }).toList());
-}
-Widget bubbleLayout(){
-
-  return Stack(children: [
-       
-      ]..addAll(categoryWidgets)..addAll(nodeWidgets)..addAll(activeWidgets));
-       
-    
-}
-   
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
+            )
+              
+                 ],),
+               ),
+             ],
+           ),
+         ),
         //typeMenu(),
-        Expanded(child: viewType=="bubbles"?bubbleLayout():tileLayout()),
+       // Expanded(child: 
+      //),
       ],
     );
-    
   }
 }
 
@@ -507,6 +565,47 @@ enum Status{
   EMPTY
 }
 
+
+
+
+// Widget typeMenu(){
+//   List<Widget> out=[];
+//   [["Projects","project"],["Sites","site"],["Books,""book"], ["Youtube","youtube"]].forEach((f){
+//          out.add(FlatButton(
+//                color: types.contains(f[1])?Colors.grey.withOpacity(0.5):null,
+//               onPressed: (){
+//                if( types.contains(f[1]))types.remove(f[1]);
+//                else types.add(f[1]);
+//                 _getModels();
+//                 _sizeWidgets();
+//                 setState(() {
+                  
+//                 });
+//               }, child: Text(f[0]),
+
+//             ));
+//           });
+//       //    out.add( Expanded(child: Container(),));
+//     [["Bubbles","bubbles"],["Lists","lists"],["Tiles,""tiles"]].forEach((g){
+//        out.add(FlatButton(
+//                color: viewType==g[1]?Colors.grey.withOpacity(0.5):null,
+//               onPressed: (){
+//                viewType=g[1];
+//                 _getModels();
+//                 _sizeWidgets();
+//                 setState(() {
+//                 });
+//               }, child: Text(g[0]),
+
+//             ));
+
+//     });
+     
+//   return Row(
+//           children: out
+//   );
+
+// }
 
 // Widget typeMenu(){
 //   return Row(

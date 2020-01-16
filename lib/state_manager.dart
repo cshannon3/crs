@@ -1,14 +1,15 @@
 import 'package:cshannon3/components/animated_list.dart';
 import 'package:cshannon3/controllers/data_controller.dart';
 import 'package:cshannon3/controllers/scale_controller.dart';
-import 'package:cshannon3/screens/home/popup.dart';
-import 'package:cshannon3/screens/home/project_tile.dart';
 import 'package:cshannon3/screens/home/projects_data.dart';
 import 'package:cshannon3/screens/proj.dart';
 import 'package:cshannon3/screens/screens.dart';
+import 'package:cshannon3/theming.dart';
 import 'package:cshannon3/utils/model_builder.dart';
+import 'package:cshannon3/utils/utils.dart';
 import 'package:firebase/firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class StateManager extends ChangeNotifier {
   DataController dataController = DataController();
@@ -17,13 +18,13 @@ class StateManager extends ChangeNotifier {
   ScrollController mainScroll = ScrollController();
   ScaleController sc;
   bool selected = true;
+  List<String> activeCat=["Engineering"];//, "UI", "Music", "Other"
 
   Widget currentScreen = Container();
 
   StateManager();
   Map<String, String> menuOptions = {
     "Home": "/",
-    "About Me": "/",
     "Projects": "/",
     "Interests": "/interests",
     "Quotes": "/quotes"
@@ -118,41 +119,63 @@ class StateManager extends ChangeNotifier {
       notifyListeners();
     }
   }
+  bool inCategories(List<String> i){
+    if(i==null ||i.isEmpty)return false;
+    int y=0;
+    while (y<i.length){
+      if(activeCat.contains(i[y]))return true;
+      y++;
+    }
+    return false;
+    
+
+  }
 
   Widget mainPage() {
-    Size projTile = Size(sc.w(), sc.fromHRange(0.3, low: 150.0));
+    Size projTile = Size(sc.w(), sc.fromHRange(0.5, low: 150.0));
     //sc.projectTile();
     return Container(
         child: ListView(
             controller: mainScroll,
             children: [
               sc.mobile ? mIntro() : dIntro(),
-              Container(
-                  height: 80.0,
+                   
+                   Container(
+                  height: 30.0,
                   width: double.infinity,
-                  child: Center(child: Text("About Me"))),
-              Container(
-                  height: 80.0,
-                  width: double.infinity,
-                  child: Center(child: Text("Projects"))),
-                       Container(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left:5.0),
+                    child: Text("Skills",style: fsSm),
+                  )),
+
+               Container(
                            height: 50.0,
                   width: double.infinity,
-                         child: Stack(
-                           children: <Widget>[
-                             CustomAnimatedList(
-        onStart: true,
-        hasToggleButton: false,
-        introDirection: DIREC.LTR,
-        //size: s,
-        widgetList: languages(),
-        lrtb: Rect.fromLTWH(0.0, 0.0, sc.w(),50.0)
+                  child:ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: languages(),)
+      //                    child: Stack(
+      //                      children: <Widget>[
+      //                        CustomAnimatedList(
+      //   onStart: true,
+      //   hasToggleButton: false,
+      //   introDirection: DIREC.LTR,
+      //   //size: s,
+      //   widgetList: languages(),
+      //   lrtb: Rect.fromLTWH(0.0, 0.0, sc.w(),50.0)
     
-      ),
-                           ],
-                         ),
+      // ),
+             
+      //                      ],
+      //                    ),
                        ),
-            ]..addAll(projects.map((p) {
+                        Container(
+                  height: 80.0,
+                  width: double.infinity,
+                  child: Center(child:Text("Projects",style:fsMed))),
+                 // style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),))),
+              projectFilterBar()
+            ]..addAll(projects.where((p)=>inCategories(p.vars["categories"])).map((p) {
                 return ProjTile(
                     projSize: projTile,
                     data: p,
@@ -165,40 +188,44 @@ class StateManager extends ChangeNotifier {
 
   Widget mIntro() {
     return Center(
-      child: Container(
-          height: sc.h() / 3,
-          width: sc.h() / 3,
-          child: Stack(
-            children: <Widget>[
-              Center(
-                child: CircleAvatar(
-                  radius: sc.w() / 2,
-                  backgroundColor: Colors.transparent,
-                  backgroundImage: AssetImage("assets/coverphoto2.jpg"),
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Container(
+            height: sc.h() / 3,
+            width: sc.h() / 3,
+            child: Stack(
+              children: <Widget>[
+                Center(
+                  child: CircleAvatar(
+                    radius: sc.w() / 2,
+                    backgroundColor: Colors.transparent,
+                    backgroundImage: AssetImage("assets/coverphoto2.jpg"),
+                  ),
                 ),
-              ),
-              Center(
-                  child: Text(
-                "Welcome, I'm Connor Shannon",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 25.0,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontStyle: FontStyle.italic),
-              ))
-            ],
-          )),
+                Center(
+                    child: Text(
+                  "Welcome, I'm Connor Shannon",
+                  textAlign: TextAlign.center,
+                  style:fsMed
+                  //  TextStyle(
+                  //     fontSize: 25.0,
+                  //     color: Colors.black,
+                  //     fontWeight: FontWeight.bold,
+                  //     fontStyle: FontStyle.italic),
+                ))
+              ],
+            )),
+      ),
     );
   }
 
   Widget dIntro() {
     return Container(
-        height: sc.h() / 3,
+        height: sc.h() / 2,
         width: double.maxFinite,
         child: Row(children: [
           Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(5.0),
               child: //Image.network("http://www.pngall.com/wp-content/uploads/2017/05/World-Map-Free-Download-PNG.png", ),
                   CircleAvatar(
                 radius: 120.0,
@@ -209,17 +236,150 @@ class StateManager extends ChangeNotifier {
             child: Padding(
                 padding: const EdgeInsets.only(left: 8.0, top: 30, right: 8.0),
                 child: //Image.network("http://www.pngall.com/wp-content/uploads/2017/05/World-Map-Free-Download-PNG.png", ),
-                    Center(
-                  child: Text(
-                    "Welcome, I'm Connor Shannon",
-                    style: TextStyle(
-                        fontSize: 45.0,
-                        color: Colors.white,
-                        fontStyle: FontStyle.italic),
-                  ),
-                )),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                       Padding(
+                         padding: EdgeInsets.all(25.0),
+                          child: Text(
+                      "Welcome, I'm Connor Shannon",
+                      style: fsVLg),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("- Biomedical Engineer",style: fsSm),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("- Creative Coder",style: fsSm),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("- Avid Traveler",style: fsSm),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                               IconButton(
+      // Use the FontAwesomeIcons class for the IconData
+      icon: new Icon(FontAwesomeIcons.github), 
+       tooltip: "cshannon3",
+      onPressed: () { 
+        launch("https://github.com/cshannon3");
+       }
+     ),
+      IconButton(
+      // Use the FontAwesomeIcons class for the IconData
+      icon: new Icon(FontAwesomeIcons.linkedin), 
+      onPressed: () { launch("https://www.linkedin.com/in/connor-shannon-24933a125/"); }
+     ),
+      IconButton(
+         tooltip: "@cshannon33",
+      // Use the FontAwesomeIcons class for the IconData
+      icon: new Icon(FontAwesomeIcons.twitter), 
+      onPressed: () { launch("https://twitter.com/cshannon33"); }
+     ),
+      IconButton(
+        tooltip: "@cshannon33",
+      // Use the FontAwesomeIcons class for the IconData
+      icon: new Icon(FontAwesomeIcons.instagram), 
+      onPressed: () { launch("https://www.instagram.com/cshannon33/"); }
+     ),
+IconButton(
+  tooltip: "conreshan@gmail.com",
+      // Use the FontAwesomeIcons class for the IconData
+      icon: new Icon(Icons.email), 
+      onPressed: () { print("Pressed"); }
+     ),
+
+                          ],)
+                        ),
+                     
+                      ],
+                    )),
+                  //   TextStyle(
+                  //       fontSize: 45.0,
+                  //       color: Colors.white,
+                  //       fontStyle: FontStyle.italic),
+                  // ),
+              
           )
         ]));
+  }
+  Widget projectFilterBar(){
+    return Container(
+      height: 100.0,
+      width: double.maxFinite,
+      child: Row(
+        
+        children: <Widget>[
+        Expanded(child: MaterialButton(
+          color:activeCat.contains("Engineering")?Colors.white.withOpacity(0.3): Colors.grey.withOpacity(0.1),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(2.0))),
+          onLongPress: () {
+             if( activeCat.contains("Engineering"))activeCat.remove("Engineering");
+               else activeCat.add("Engineering");
+            notifyListeners();
+          },
+           onPressed: (){
+            activeCat=["Engineering"];
+            notifyListeners();
+          },
+          child: Text("Engineering", style: fsSm,),
+          ),),
+          Expanded(
+            child: MaterialButton(
+          color: activeCat.contains("UI")?Colors.white.withOpacity(0.3): Colors.grey.withOpacity(0.1),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(2.0))),
+          onLongPress: () {
+                        if( activeCat.contains("UI"))activeCat.remove("UI");
+               else activeCat.add("UI");
+            notifyListeners();
+          },
+          onPressed: (){
+activeCat=["UI"];
+            notifyListeners();
+          },
+          child: Text("UI-Related", style: fsSm,),
+          ),),
+          Expanded(child: MaterialButton(
+          color:activeCat.contains("Music")?Colors.white.withOpacity(0.3): Colors.grey.withOpacity(0.1),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(2.0))),
+         onLongPress: (){
+             if( activeCat.contains("Music"))activeCat.remove("Music");
+               else activeCat.add("Music");
+            notifyListeners();
+         },
+          onPressed: () {
+            activeCat=["Music"];
+            notifyListeners();
+          },
+          child: Text("Music-Related", style: fsSm,),
+          ),),
+            Expanded(child:MaterialButton(
+          color:activeCat.contains("Other")?Colors.white.withOpacity(0.3): Colors.grey.withOpacity(0.1),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(2.0))),
+          onLongPress: () {
+                        if( activeCat.contains("Other"))activeCat.remove("Other");
+               else activeCat.add("Other");
+            notifyListeners();
+          },
+           onPressed: (){
+            activeCat=["Other"];
+            notifyListeners();
+          },
+          child: Text("Other", style: fsSm,),
+          ),),
+          
+      ],),
+    );
   }
   
 
@@ -227,20 +387,29 @@ class StateManager extends ChangeNotifier {
     if (langs == null) langs = ["Dart/Flutter", "C++", "Python", "Ruby", "Engineering", "3D Printing"];
     List<Widget> out = [];
     langs.forEach((lang) {
-      out.add(MaterialButton(
-        color: Colors.blueGrey.withOpacity(0.4),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20.0))),
-        onPressed: () {},
-        child: Text(
-          lang,
-          style: TextStyle(color: Colors.white),
+      out.add(Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: MaterialButton(
+          color: Colors.blueGrey.withOpacity(0.4),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(20.0))),
+          onPressed: () {},
+          child: Text(
+            lang,
+            style: fsSm
+           // TextStyle(color: Colors.white),
+          ),
         ),
       ));
     });
     return out;
   }
 }
+
+
+
+
+
 
 // Center(
 //   child: AnimatedContainer(

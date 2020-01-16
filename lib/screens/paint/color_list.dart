@@ -19,7 +19,7 @@ class ColorListState extends State<ColorList> {
 
   @override
   void initState() {
-    // TODO: implement initState
+   
     currentColorValue = widget.paintController.currentColor;
     super.initState();
   }

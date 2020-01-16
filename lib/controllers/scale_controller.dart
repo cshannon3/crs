@@ -143,7 +143,7 @@ class ScaleController extends ChangeNotifier {
       );
   }
   Map<int, Rect> getLocations({int nodesShown=8,Rect area,BUB layoutType=BUB.CIRCLE, double radiusFrac=.33, double minR=30.0}){
-    area??=_mainArea;
+    area??=(mobile)?Rect.fromLTWH(paddingLR, 0.0, w(), h()):_mainArea;
     Map<int, Rect> itemLocs={};
     double centerX = area.center.dx;
     double centerY=(mobile)? area.center.dy: area.center.dy;

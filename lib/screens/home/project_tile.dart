@@ -1,3 +1,4 @@
+import 'package:cshannon3/components/text_builder.dart';
 import 'package:cshannon3/utils/model_builder.dart';
 import 'package:cshannon3/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,9 @@ class _ProjectTileState extends State<ProjectTile> {
       ),
     );
   }
+
+
+  
   @override
   Widget build(BuildContext context) {
   
@@ -99,7 +103,11 @@ class _ProjectTileState extends State<ProjectTile> {
                     ),
                     Expanded(child: ListView(
                       children: <Widget>[
-                        Text(ifIs(widget.data.vars, "description")??"")
+                        toRichText({
+                          "token":"#",
+                          "text":ifIs(widget.data.vars, "description")??""
+                        }),
+                       // Text(ifIs(widget.data.vars, "description")??"")
                       ],
                     ),)
                   ],

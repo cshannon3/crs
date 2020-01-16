@@ -3,6 +3,7 @@
 import 'package:cshannon3/utils/model_builder.dart';
 import 'package:cshannon3/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 Map<String, Color> catColors = {
   "Neuroscience":Colors.green,
   "Networks":Colors.blue,
@@ -14,6 +15,28 @@ Map<String, Color> catColors = {
   "Computers":Colors.cyan
 };
 
+final fsVLg=GoogleFonts.merriweather(textStyle: TextStyle(color: Colors.white, fontSize: 45.0));
+final fsLg=GoogleFonts.merriweather(textStyle: TextStyle(color: Colors.white, fontSize: 25.0));
+final fsMed=GoogleFonts.merriweather(textStyle: TextStyle(color: Colors.white, fontSize: 20.0));
+final fsSm=GoogleFonts.merriweather(textStyle: TextStyle(color: Colors.white, fontSize: 16.0));
+final fsXSm=GoogleFonts.merriweather(textStyle: TextStyle(color: Colors.white, fontSize: 12.0));
+
+final projTitle=GoogleFonts.merriweather(textStyle:TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          decoration: TextDecoration.underline,
+                        ));
+final projDes=GoogleFonts.merriweather(textStyle:TextStyle(
+                          color: Colors.black,
+                          fontSize: 16.0,
+                        ));
+final projBut=GoogleFonts.merriweather(textStyle:TextStyle(
+                          color: Colors.blue,
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold
+                         
+                        ));
+                      
 final Color menuButton = Colors.white.withOpacity(0.1);
 
 

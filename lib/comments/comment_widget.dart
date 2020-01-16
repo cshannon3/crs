@@ -20,7 +20,7 @@ class _ActiveCommentWidgetState extends State<ActiveCommentWidget> {
   Comment comment;
   //  TextInputClient p;
   //  bool showFeedback=false;
-  bool edit=false;
+  bool edit=true;
      @override
   void initState() {
     super.initState();

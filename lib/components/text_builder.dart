@@ -3,6 +3,7 @@
 import 'package:cshannon3/utils/utils.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
               
 RichText toRichText(var tokens){
@@ -12,6 +13,7 @@ RichText toRichText(var tokens){
 List<TextSpan> toTextSpan(var tokens){
    
     var vars={
+      
       "text": tokens.containsKey("text")? (tokens["text"] is List)?tokens["text"].join():tokens["text"]:"",
         "token": tokens.containsKey("token")?tokens["token"]:"@@",// "#"
         "isBold": tokens.containsKey("bold")&&["true", "True", "t"].contains(tokens["bold"])?FontWeight.bold : FontWeight.normal,
@@ -69,11 +71,11 @@ List<TextSpan> toTextSpan(var tokens){
           textWidgets.add(
             TextSpan(
               text: textSeg, 
-              style:TextStyle(
+              style:GoogleFonts.merriweather(textStyle: TextStyle(
                 fontSize: vars["fontSize"], 
                 fontWeight: vars["fontWeight"], 
                 fontStyle:vars["fontType"], 
-                color: vars["color"])));
+                color: vars["color"]))));
              //   backgroundColor: isHighlighted ? Colors.yellowAccent:null)));
           }
         }

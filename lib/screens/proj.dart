@@ -1,3 +1,5 @@
+import 'package:cshannon3/components/text_builder.dart';
+import 'package:cshannon3/theming.dart';
 import 'package:cshannon3/utils/model_builder.dart';
 import 'package:cshannon3/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -30,8 +32,8 @@ class _ProjTileState extends State<ProjTile> {
       onPressed: onPress,
       child: Text(
         name,
-        style: TextStyle(
-            color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 14.0),
+        style:projBut
+      //   TextStyle( color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 14.0),
       ),
     );
   }
@@ -70,34 +72,36 @@ class _ProjTileState extends State<ProjTile> {
                   children: <Widget>[
                     Text(widget.data.vars["name"],
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20.0,
-                          decoration: TextDecoration.underline,
-                        )),
+                        style: projTitle
+                        ),
                     Container(
                       height: 30.0,
                       width:widget.projSize.width,
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
-                          Expanded(
+                          Container(
+                            child:gitHubButton(ifIs(widget.data.vars, "githubUrl"))
 
-                            child: Container(
-                              child:gitHubButton(ifIs(widget.data.vars, "githubUrl"))
-
-                            ),
                           ),
-                          Expanded(
-                            child: Container(
-                                child: widget.data.vars["demoPath"]==null ?null: demoButton(widget.onChange),
-                          )),
+                          Container(
+                              child: widget.data.vars["demoPath"]==null ?null: demoButton(widget.onChange),
+                          ),
                         ],
                       ),
                     ),
-                    Expanded(child: ListView(
-                      children: <Widget>[
-                        Text(ifIs(widget.data.vars, "description")??"")
-                      ],
+                    Expanded(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ListView(
+                        children: <Widget>[
+                            toRichText({
+                                "text":ifIs(widget.data.vars, "description")??"",
+                                "token":"#",
+                                "fontSize":20.0
+                              })
+                        //  Text(ifIs(widget.data.vars, "description")??"", style: projDes,)
+                        ],
+                      ),
                     ),)
                   ],
                 ),
@@ -145,37 +149,48 @@ class _ProjTileState extends State<ProjTile> {
                       children: <Widget>[
                         Text(widget.data.vars["name"],
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
-                              decoration: TextDecoration.underline,
-                            )),
+                            style: projTitle
+                            // TextStyle(
+                            //   color: Colors.black,
+                            //   fontSize: 20.0,
+                            //   decoration: TextDecoration.underline,
+                            // )
+                            
+                            ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             height: 30.0,
                             width:widget.projSize.width,
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
                               children: <Widget>[
-                                Expanded(
+                                Container(
+                                  child:gitHubButton(ifIs(widget.data.vars, "githubUrl"))
 
-                                  child: Container(
-                                    child:gitHubButton(ifIs(widget.data.vars, "githubUrl"))
-
-                                  ),
                                 ),
-                                Expanded(
-                                  child: Container(
-                                      child:  widget.data.vars["demoPath"]==null ?null:demoButton(widget.onChange),
-                                )),
+                                Container(
+                                    child:  widget.data.vars["demoPath"]==null ?null:demoButton(widget.onChange),
+                                ),
                               ],
                             ),
                           ),
                         ),
-                        Expanded(child: ListView(
-                          children: <Widget>[
-                            Center(child: Text(ifIs(widget.data.vars, "description")??""))
-                          ],
+                        Expanded(child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ListView(
+                            children: <Widget>[
+                              Center(child: 
+                              toRichText({
+                                "text":ifIs(widget.data.vars, "description")??"",
+                                "token":"#",
+                                "fontSize":20.0
+                              })
+                              
+                             // Text(ifIs(widget.data.vars, "description")??"", style: projDes,)
+                              )
+                            ],
+                          ),
                         ),)
                       ],
                     ),

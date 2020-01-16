@@ -4,6 +4,7 @@ import 'package:cshannon3/screens/home/project_tile.dart';
 import 'package:cshannon3/state_manager.dart';
 import 'package:cshannon3/utils/model_builder.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 
@@ -121,7 +122,9 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 "Projects",
-                style: TextStyle(color: Colors.white, fontSize: 25),
+                 style: GoogleFonts.aguafinaScript(),
+                 //GoogleFonts.aguafinaScript(textStyle: TextStyle(color: Colors.white)),
+            //    style: TextStyle(color: Colors.white, fontSize: 25),
               ),
             )),
 
