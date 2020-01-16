@@ -23,7 +23,6 @@ class _ProjTileState extends State<ProjTile> {
   Widget demoButton(Function onpress) => matbutton("Demo", onpress);
 
   Widget matbutton(String name, Function onPress) {
-    
     return MaterialButton(
       color: Colors.transparent,
       shape: RoundedRectangleBorder(
@@ -113,7 +112,7 @@ class _ProjTileState extends State<ProjTile> {
   Widget desktopLayout(){
    return Center(
         child: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.only(top:5.0,bottom:5.0),
           child: Container(
             height: widget.projSize.height,
             width: widget.projSize.width,
@@ -144,7 +143,7 @@ class _ProjTileState extends State<ProjTile> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(25.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Column(
                       children: <Widget>[
                         Text(widget.data.vars["name"],

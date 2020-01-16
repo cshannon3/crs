@@ -503,7 +503,7 @@ Widget bubbleLayout(){
                  height: 30.0,
                  child: Row(children: <Widget>[
                      IconButton(
-              icon: Icon(FontAwesomeIcons.internetExplorer),
+              icon: Icon(Icons.web),
                color: types.contains("sites")?Colors.grey.withOpacity(0.5):null,
               onPressed: (){
                if( types.contains("sites"))types.remove("sites");

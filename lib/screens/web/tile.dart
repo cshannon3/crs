@@ -30,8 +30,7 @@ class _MyTileState extends State<MyTile> {
                           : Image.asset(widget.modelData.vars["imgUrl"], fit: BoxFit.fill,)
                         )
                       ),
-                    ),
-                  
+                    ),                
     );
   }
 }

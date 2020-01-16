@@ -1,6 +1,7 @@
-import 'package:cshannon3/components/animated_list.dart';
+
 import 'package:cshannon3/controllers/data_controller.dart';
 import 'package:cshannon3/controllers/scale_controller.dart';
+import 'package:cshannon3/screens/books.dart';
 import 'package:cshannon3/screens/home/projects_data.dart';
 import 'package:cshannon3/screens/proj.dart';
 import 'package:cshannon3/screens/screens.dart';
@@ -25,9 +26,10 @@ class StateManager extends ChangeNotifier {
   StateManager();
   Map<String, String> menuOptions = {
     "Home": "/",
-    "Projects": "/",
+    //"Projects": "/",
     "Interests": "/interests",
-    "Quotes": "/quotes"
+    "Quotes": "/quotes",
+     "My Books": "/books",
   };
   Map<String, dynamic> dataMap = {
     "projects": {
@@ -95,6 +97,7 @@ class StateManager extends ChangeNotifier {
     "/paint": (StateManager m) => new PaintDemo(),
     "/quotes": (StateManager m) => new Quotes(m),
     "/interests": (StateManager m) => new Bubbles(m),
+    "/books":(StateManager m) => new Books(m),
   };
   setScale(Size screenSize) {
     if (sc == null)

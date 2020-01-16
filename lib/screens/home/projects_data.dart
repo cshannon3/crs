@@ -18,11 +18,8 @@ CustomModel.fromLib({
 "categories": ["Engineering"],
 "description": '''
 #bold##size13##colorgrey#University of Delaware Senior Design, Sponsored By Air Liquide Healthcare#/bold##/color#
-#size18##bold#Problem:#/bold##size14# 
+#size14##bold#Problem:#/bold##size14#  Nitrous Oxide therapy has the potential to provide non-invasive, at-home pain management to millions, but at-home delivery of nitrous oxide raises multiple environmental and patient comfort concerns that are not resolved by the current home care ventilators.
 #bold#Purpose:#/bold# To provide a consistent supply of gas regardless of the patient’s respiratory activity while minimizing waste gas and patient discomfort.
-
-''',
-"expanded":'''
 #bold##size18#Benchmarking:#/bold# #size14#
  - Non-rebreathing Oxygen Mask required nurse present
  - Continuous Flow systems lead to too much waste
@@ -33,8 +30,7 @@ Decision Point 1: Sensor Selection
 Decision Point 2: Resorvior Bag Selection
 #bold#Skills Gained/Lessons Learned:#/bold# Arduino, Rapid Prototyping, Client Relationship, presentation and defense of decisions
 #bold#Status/Path Forward:#/bold#  Ended class in Winter 2018 but was hired by Air Liquide to continue development.
-
-'''
+''',
 }
   }
 ),
@@ -45,12 +41,11 @@ CustomModel.fromLib({
 "imgUrl":"assets/jrdsn.png",
 "categories": ["Engineering"],
 "description": '''
-#bold##size13##colorgrey#University of Delaware Junior Design, Sponsored By Air Liquide Healthcare#/bold##/color#
+#bold##size13##colorgrey#University of Delaware Junior Design, Sponsored By Air Liquide Healthcare#/bold##/color##size14#
 #bold#Problem:#/bold# In certian Knee Prosthetics, the users have to manually lock and unlock the Knee Joint when going between sitting and standing. Doing so puts the user at risk of falling or hurting themself.
 #bold#Purpose:#/bold# To create a wireless locking mechanism which minimizes the risk of falling and is robust and comfortable enough to be used continuously.
-#bold#Benchmarking:#/bold# 
 #bold#Approach:#/bold# Remote controlled linear actuator mechanism.
-#bold#Skills Gained/Lessons Learned:#/bold# While the best proshtetics are incredibly advanced, the majority of patients only have access to extremely rudimentary devices.
+#bold#Skills Gained/Lessons Learned:#/bold# While the best prosthetics are incredibly advanced, the majority of patients only have access to extremely rudimentary devices.
 '''
 }}),
 
@@ -66,9 +61,8 @@ CustomModel.fromLib({
     #bold##size13##colorgrey#University of Delaware Junior Design, Sponsored By Air Liquide Healthcare#/bold##/color#
     #bold#Problem:#/bold# Music and math are both awesome and powerful, but music theory and math education are often boring and confusing.
     #bold#Purpose:#/bold# Build interactive tools that give the user a more intuitive understanding of the patterns found in music and explained through math.
-    #bold#Approach:#/bold# This ideas stemmed from a Fourier Transform Visualization app I made after seeing 3B1Bs video. In seeing an oppurtunity to apply those ideas towards my interest in music theory, I merged them into this project. 
+    #bold#Approach:#/bold# This ideas stemmed from a Fourier Transform Visualization app I made after seeing 3b1bs video. In seeing an opportunity to apply those ideas towards my interest in music theory, I merged them into this project. 
     #bold#Lessons:#/bold# Consonance vs Dissonance.
-    #bold#Resources:#/bold# 
     '''
 }}),
 
@@ -90,7 +84,7 @@ CustomModel.fromLib({
       "imgUrl":"https://h5p.org/sites/default/files/styles/medium-logo/public/logos/drag-and-drop-icon.png?itok=0dFV3ej6",
       "categories": ["UI"],
       "description": '''
-      A far-from-finished no-coding UI tool. It enables you to create, shape, move, nest, and format UI components. Ideally this tool would be used for creating fully functional apps through the browser but there is still a lot to do to get there. Currently,
+      A no-coding UI tool. It enables you to create, shape, move, nest, and format UI components. Ideally this tool would be used for creating fully functional apps through the browser but there is still a lot to do to get there. Currently,
       you can only change the color, opacity and shade of the box, which can stull be useful in layout mockups. 
       '''
 }}),
@@ -134,15 +128,15 @@ CustomModel.fromLib({
 "description": ""
 }
 }),
-CustomModel.fromLib({
-      "name":"project",
-      "vars":{
-      "name": "OLLI Database",
-      "githubUrl": "https://github.com/cshannon3/guitar_vis_f",
-      "imgUrl": "http://www.olli.udel.edu/wp-content/uploads/2018/03/olli-logo.jpg",
-      "categories": ["Other"],
-      "description": ""
-}}),
+// CustomModel.fromLib({
+//       "name":"project",
+//       "vars":{
+//       "name": "OLLI Database",
+//       "githubUrl": "https://github.com/cshannon3/guitar_vis_f",
+//       "imgUrl": "http://www.olli.udel.edu/wp-content/uploads/2018/03/olli-logo.jpg",
+//       "categories": ["Other"],
+//       "description": ""
+// }}),
   CustomModel.fromLib({
   "name":"project",
   "vars":{
@@ -153,16 +147,16 @@ CustomModel.fromLib({
 "categories": ["Music"],
 "description": ""
 }}),
-CustomModel.fromLib({
-  "name":"project",
-  "vars":{
-"name": "Rap Pad",
-"demoPath":"/raps",
-//"githubUrl":"https://github.com/cshannon3/http_apis_and_scrapers_intro",
-"imgUrl": "https://ewedit.files.wordpress.com/2017/12/black-thought.jpg",
-"categories": ["General"],
-"description": ""
-}
-}),
+// CustomModel.fromLib({
+//   "name":"project",
+//   "vars":{
+// "name": "Rap Pad",
+// "demoPath":"/raps",
+// //"githubUrl":"https://github.com/cshannon3/http_apis_and_scrapers_intro",
+// "imgUrl": "https://ewedit.files.wordpress.com/2017/12/black-thought.jpg",
+// "categories": ["General"],
+// "description": ""
+// }
+// }),
  ];
   
