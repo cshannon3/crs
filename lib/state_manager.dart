@@ -5,7 +5,10 @@ import 'package:cshannon3/screens/books.dart';
 import 'package:cshannon3/screens/home/projects_data.dart';
 import 'package:cshannon3/screens/proj.dart';
 import 'package:cshannon3/screens/screens.dart';
+import 'package:cshannon3/screens/wordpress/login.dart';
 import 'package:cshannon3/theming.dart';
+import 'package:cshannon3/user_repository.dart';
+import 'package:cshannon3/utils/login_state.dart';
 import 'package:cshannon3/utils/model_builder.dart';
 import 'package:cshannon3/utils/utils.dart';
 import 'package:firebase/firestore.dart';
@@ -19,6 +22,9 @@ class StateManager extends ChangeNotifier {
   ScrollController mainScroll = ScrollController();
   ScaleController sc;
   bool selected = true;
+  LoginState state;
+  final UserRepository _userRepository=UserRepository();
+
   List<String> activeCat=["Engineering"];//, "UI", "Music", "Other"
 
   Widget currentScreen = Container();
@@ -26,7 +32,7 @@ class StateManager extends ChangeNotifier {
   StateManager();
   Map<String, String> menuOptions = {
     "Home": "/",
-    //"Projects": "/",
+    "Projects": "/wordpress",
     "Interests": "/interests",
     "Quotes": "/quotes",
      "My Books": "/books",
@@ -70,11 +76,13 @@ class StateManager extends ChangeNotifier {
           : [];
   List<CustomModel> getAllModels() {
     List<CustomModel> cm = [];
-    cm.addAll(dataMap["projects"]["models"]);
+  //  cm.addAll(dataMap["projects"]["models"]);
     cm.addAll(dataMap["books"]["models"]);
+    print(cm.length);
     cm.addAll(dataMap["sites"]["models"]);
+    print(cm.length);
     cm.addAll(dataMap["youtube"]["models"]);
-
+    print(cm.length);
     return cm;
   }
 
@@ -90,6 +98,15 @@ class StateManager extends ChangeNotifier {
     });
   }
 
+  Future<void> signIn() async{
+    await _userRepository.signInWithGoogle().then((onValue) {
+      print("success");
+      print(_userRepository.getU().displayName);
+      state = LoginState.success();
+    }).catchError((onError) {
+      state = LoginState.failure(onError);
+    });
+  }
   Map<String, dynamic> routes = {
     "/": (StateManager m) => new HomePage(m),
     "/fourier": (StateManager m) => new Fourier2(m),
@@ -98,6 +115,7 @@ class StateManager extends ChangeNotifier {
     "/quotes": (StateManager m) => new Quotes(m),
     "/interests": (StateManager m) => new Bubbles(m),
     "/books":(StateManager m) => new Books(m),
+    "/wordpress":(StateManager m) => new LoginPage(),
   };
   setScale(Size screenSize) {
     if (sc == null)
@@ -113,7 +131,6 @@ class StateManager extends ChangeNotifier {
     else currentScreen = routes[currentRoute](this);
     return currentScreen;
   }
-  //List<Widget> getChildren()=>_projects();
 
   changeScreen(String route) {
     print(route);
@@ -130,8 +147,6 @@ class StateManager extends ChangeNotifier {
       y++;
     }
     return false;
-    
-
   }
 
   Widget mainPage() {
@@ -142,7 +157,6 @@ class StateManager extends ChangeNotifier {
             controller: mainScroll,
             children: [
               sc.mobile ? mIntro() : dIntro(),
-                   
                    Container(
                   height: 30.0,
                   width: double.infinity,
@@ -157,20 +171,6 @@ class StateManager extends ChangeNotifier {
                   child:ListView(
                     scrollDirection: Axis.horizontal,
                     children: languages(),)
-      //                    child: Stack(
-      //                      children: <Widget>[
-      //                        CustomAnimatedList(
-      //   onStart: true,
-      //   hasToggleButton: false,
-      //   introDirection: DIREC.LTR,
-      //   //size: s,
-      //   widgetList: languages(),
-      //   lrtb: Rect.fromLTWH(0.0, 0.0, sc.w(),50.0)
-    
-      // ),
-             
-      //                      ],
-      //                    ),
                        ),
                         Container(
                   height: 80.0,
@@ -186,7 +186,9 @@ class StateManager extends ChangeNotifier {
                     onChange: p.vars.containsKey("demoPath")
                         ? () => changeScreen(p.vars["demoPath"])
                         : null);
-              }).toList())));
+              }).toList())..add(Container(height: 100.0,width: double.maxFinite,))
+              )
+              );
   }
 
   Widget mIntro() {
@@ -210,11 +212,7 @@ class StateManager extends ChangeNotifier {
                   "Welcome, I'm Connor Shannon",
                   textAlign: TextAlign.center,
                   style:fsMed
-                  //  TextStyle(
-                  //     fontSize: 25.0,
-                  //     color: Colors.black,
-                  //     fontWeight: FontWeight.bold,
-                  //     fontStyle: FontStyle.italic),
+               
                 ))
               ],
             )),
@@ -241,7 +239,7 @@ class StateManager extends ChangeNotifier {
                 child: //Image.network("http://www.pngall.com/wp-content/uploads/2017/05/World-Map-Free-Download-PNG.png", ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                        Padding(
                          padding: EdgeInsets.all(25.0),
@@ -409,8 +407,19 @@ activeCat=["UI"];
   }
 }
 
-
-
+      //                    child: Stack(
+      //                      children: <Widget>[
+      //                        CustomAnimatedList(
+      //   onStart: true,
+      //   hasToggleButton: false,
+      //   introDirection: DIREC.LTR,
+      //   //size: s,
+      //   widgetList: languages(),
+      //   lrtb: Rect.fromLTWH(0.0, 0.0, sc.w(),50.0)
+      // ),
+             
+      //                      ],
+      //                    ),
 
 
 

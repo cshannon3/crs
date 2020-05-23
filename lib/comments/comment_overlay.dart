@@ -34,7 +34,8 @@ Widget onNewChild()=>ActiveCommentWidget(comment: Comment(),);
    
     widget.comments.forEach((c){
       print(c.comment);
-        d.rootBox.childrenBoxes.add(GuiBox(LRTB(0.0, 0.25, .25, 0.5), 
+        d.rootBox.childrenBoxes.add(GuiBox(c.location,
+          //LRTB(0.0, 0.25, .25, 0.5), 
         color: Colors.yellow[200],
         onNewChild: onNewChild,
          child: ActiveCommentWidget(

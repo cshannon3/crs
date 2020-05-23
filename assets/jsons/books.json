@@ -10,9 +10,7 @@
     "ownershipStatus":"own",
     "readingStatus":"read",
     "imgUrl":"assets/bookimages/loonshots.png",
-
     "description": "",
-    
     "recommendedBy":"Tim Ferris"
 },
 {
@@ -892,9 +890,7 @@
         "ownershipStatus": "own",
         "readingStatus": "not started",
         "imgUrl": "assets/bookimages/thanksforfeedback.jpg",
-        
         "description": "",
-       
         "recommendedBy": ""
     },
     {

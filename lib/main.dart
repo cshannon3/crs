@@ -20,6 +20,7 @@ To be able to do this, first in and out of gui mode,
 import 'package:cshannon3/comments/comment_model.dart';
 import 'package:cshannon3/comments/comment_overlay.dart';
 import 'package:cshannon3/menu.dart';
+import 'package:cshannon3/screens/gui2/lrtb.dart';
 import 'package:cshannon3/screens/paint/paint_screen.dart';
 import 'package:cshannon3/secrets.dart';
 import 'package:firebase/firestore.dart';
@@ -81,8 +82,6 @@ class RootApp extends StatefulWidget {
 }
 
 class _RootAppState extends State<RootApp> {
- 
-
   StateManager stateManager = StateManager();
 
 bool showFeedback=false;
@@ -129,6 +128,7 @@ bool showPaint=false;
                                   return Comment(
                                     comment:  document.data()['comment'],
                                     commenter: document.data()['commenter'],//stateManager.commenter,
+                                    location: LRTB.fromMap(document.data()['location'])
                                   );
                               }).toList(),
                             );
@@ -175,16 +175,27 @@ bool showPaint=false;
           child: PaintDemo(),
         ):Container(),
             Positioned(
-             right: MediaQuery.of(context).size.width-100.0,
+             left: MediaQuery.of(context).size.width-150.0,
              top: 0.0,
-             height: 50.0,
-             width: 250.0,
+             height: 40.0,
+             width: 150.0,
               child: Container(
-                width: 250.0,
+                width: 150.0,
                 child: Row(children: <Widget>[
+                    IconButton(onPressed: (){
+                    setState(() {
+                      stateManager.dataController.authorizeGoogleUser();
+                        
+                        //stateManager.signIn();
+                    });
+                  },
+                  icon: Icon(
+                    FontAwesomeIcons.google
+                  ),
+                  ),
                   IconButton(onPressed: (){
                     setState(() {
-                      showPaint=!showPaint;
+                       showPaint=!showPaint;
                     });
                   },
                   icon: Icon(
@@ -194,7 +205,7 @@ bool showPaint=false;
                 IconButton(onPressed: (){     setState(() {
                       showFeedback=!showFeedback;
                     });},
-                  icon: Icon(FontAwesomeIcons.comments),
+                  icon: Icon(FontAwesomeIcons.comment),
                   ),
                 ],),
               ),

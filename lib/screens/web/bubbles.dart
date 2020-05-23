@@ -14,7 +14,7 @@ import 'package:cshannon3/utils/model_builder.dart';
 import 'package:cshannon3/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+//import 'dart:math';
 
 
 class Bubbles extends StatefulWidget {
@@ -32,10 +32,11 @@ class _BubblesState extends State<Bubbles>  with TickerProviderStateMixin {
   List<Widget> categoryWidgets=[];
   List<Widget> nodeWidgets=[];   
   List<Widget> activeWidgets=[];
+  List<Edge> edges=[];
   CurvedAnimation decelerate, fastIn, easeIn;
  CustomModel centerItem, activeItem;
 
- List<String> types= [ "site", "youtube", "books"];
+ List<String> types= [ "site", "youtube", "book"];
  String viewType="bubbles";
  var lis;
  Rect centerRect, bubbleBox;//ScaleController sc;
@@ -79,9 +80,13 @@ class _BubblesState extends State<Bubbles>  with TickerProviderStateMixin {
     }
   }
 
+
+
+
+
   _sizeWidgets(){
     categoryWidgets=[];
-    nodeWidgets=[];
+    nodeWidgets=[];     edges=[];
     centerRect = widget.stateManager.sc.centerRect();
     bubbleBox= widget.stateManager.sc.bubbleBox();
     Map<int, Rect> categoryLocs = widget.stateManager.sc.getLocations(nodesShown: catShown, layoutType: BUB.OVAL, );
@@ -96,14 +101,14 @@ class _BubblesState extends State<Bubbles>  with TickerProviderStateMixin {
       
            if(category.vars["size"]==2){
        Map<int, Rect> nodeLocs = widget.stateManager.sc.getLocations(area:category.vars["loc"], nodesShown:len);
+
       nodeLocs.forEach((index, loc){
         category.vars["nodes"][index].vars["loc"]=nodeLocs[index];
         nodeWidgets.add(toNodeWidget(category.vars["nodes"][index]));
+       // if(index%3==0) edges.add(Edge(color: Colors.black, start:centerRect.center, end:loc.center, strokeWidth:3.0));
       });
        }
-  
     });
-
   }
 
   onRemove(){
@@ -222,8 +227,24 @@ _setCurves(){
                 )
                 );
   }
-  
- 
+  // List<Edge> getEdges(){
+  //   List<Edge> edges=[];
+  //   if(centerItem!=null){
+  //     Edge(color: Colors.blue, start: centerItem.vars["loc"].center, end:itemNodes[0].vars["loc"].center, strokeWidth: 3.0);
+  //     // final _random = new Random();
+  //     // int o=_random.nextInt( itemNodes.length);
+  //     // int u=0;
+  //     // while (edges.length<5 && u<20){
+  //     //   if(itemNodes[o].vars["loc"]!=null){
+  //     //     print("edge");
+  //     //       edges.add(Edge(color: RandomColor.next(), start: centerItem.vars["loc"].center, end:itemNodes[o].vars["loc"].center, strokeWidth: 3.0));
+  //     //       o=_random.nextInt( itemNodes.length);
+  //     //       u++;
+  //     //   }
+  //     // }
+  //   }
+  //   return edges;
+  // }
 
 
    
@@ -270,6 +291,8 @@ List<Widget> getActiveWidgets(){
     out.add(toAnimatedBox(from: centerRect, to: centerItem.vars["loc"], imgUrl:centerItem.vars["imgUrl"],  entering: false));
       break;
     case Status.CENTER:
+
+  
          out.add(
          Positioned.fromRect(
           rect:bubbleBox,
@@ -452,8 +475,23 @@ Widget tileLayout(){
 Widget bubbleLayout(){
 
   return Stack(children: [
+    SizedBox.fromSize(
+      size:widget.stateManager.sc.mainArea().size,
+      child: Container(
+        width: double.infinity,
+        height: double.infinity,
+        // color: widget.backgroundColor,
+        child: ClipRect(
+          child: CustomPaint(
+            painter: TracePainter(
+                edges: edges
+               
+                ),
+          ),
+        ),
+      )
 
-       
+    ), 
       ]..addAll(categoryWidgets)..addAll(nodeWidgets)..addAll(activeWidgets)
       );
        
@@ -503,35 +541,34 @@ Widget bubbleLayout(){
                  height: 30.0,
                  child: Row(children: <Widget>[
                      IconButton(
+                       tooltip: "Websites",
               icon: Icon(Icons.web),
-               color: types.contains("sites")?Colors.grey.withOpacity(0.5):null,
+               color: types.contains("site")?Colors.white.withOpacity(0.8):null,
               onPressed: (){
-               if( types.contains("sites"))types.remove("sites");
-               else types.add("sites");
+               if( types.contains("site"))types.remove("site");
+               else types.add("site");
                 _getModels();
                 _sizeWidgets();
                 setState(() {
                 });
               }, //child: Text("Sites",style: fsSm,),
-
             ),
          IconButton(
+           tooltip: "books",
               icon: Icon(FontAwesomeIcons.book),
-               color: types.contains("books")?Colors.grey.withOpacity(0.5):null,
+               color: types.contains("book")?Colors.white.withOpacity(0.8):null,
               onPressed: (){
-               if( types.contains("books"))types.remove("books");
-               else types.add("books");
+               if( types.contains("book"))types.remove("book");
+               else types.add("book");
                 _getModels();
                 _sizeWidgets();
-                setState(() {
-                  
-                });
+                setState(() { });
               }, //child: Text("Books",style: fsSm,),
-
             ),
             IconButton(
+              tooltip: "youtube channels",
               icon: Icon(FontAwesomeIcons.youtube),
-               color: types.contains("youtube")?Colors.grey.withOpacity(0.5):null,
+               color: types.contains("youtube")?Colors.white.withOpacity(0.8):null,
               onPressed: (){
                if( types.contains("youtube"))types.remove("youtube");
                else types.add("youtube");
@@ -565,6 +602,46 @@ enum Status{
   EMPTY
 }
 
+class Edge{
+  final Offset start;
+  final Offset end;
+  final Color color;
+  final double strokeWidth;
+
+
+  Edge({this.start, this.end, this.color, this.strokeWidth});
+  Paint paint()=>Paint() ..strokeJoin = StrokeJoin.round
+      ..strokeWidth = strokeWidth
+      ..color =color
+      ..style = PaintingStyle.stroke;
+  
+}
+/// A Custom Painter used to generate the trace line from the supplied dataset
+class TracePainter extends CustomPainter {
+  final List<Edge> edges;
+  TracePainter(
+      { this.edges,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+  
+
+    // only start plot if dataset has data
+    int length = edges.length;
+    if (length > 0) {
+
+    //  Path trace = Path();
+      edges.forEach((e){
+        canvas.drawLine(e.start, e.end, e.paint());
+      });
+     
+    }
+  }
+
+  @override
+  bool shouldRepaint(TracePainter old) => true;
+}
 
 
 

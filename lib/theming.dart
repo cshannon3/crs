@@ -24,7 +24,7 @@ final fsXSm=GoogleFonts.merriweather(textStyle: TextStyle(color: Colors.white, f
 final projTitle=GoogleFonts.merriweather(textStyle:TextStyle(
                           color: Colors.black,
                           fontSize: 20.0,
-                          decoration: TextDecoration.underline,
+                        //  decoration: TextDecoration.underline,
                         ));
 final projDes=GoogleFonts.merriweather(textStyle:TextStyle(
                           color: Colors.black,

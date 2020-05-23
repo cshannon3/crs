@@ -19,6 +19,7 @@ class _FourierLinesState extends State<FourierLines> {
   Stopwatch stopwatch = Stopwatch();
   ComboWave comboWave;
    double padding=20.0;
+   bool show=false;
    
 
 
@@ -61,7 +62,9 @@ class _FourierLinesState extends State<FourierLines> {
                   )),
 
                   
-            ]..addAll(comboWidget()),
+            ]..addAll(comboWidget())..add(Align(alignment: Alignment.topCenter,child: RaisedButton(onPressed: (){setState(() {
+              show=!show;
+            });},child: Text("Show"),),)),
           ),
         ),
         Expanded(child: Stack(children: traces()), ),
@@ -89,18 +92,17 @@ Widget traceWidget(List trace, Color waveColor){
     List<Widget> out=[];
     if(comboWave!=null){
     out.add(traceWidget(comboWave.trace, comboWave.waveColor));
+    if(show){
     comboWave.waves.forEach((w){
       if(w.isShown)
         out.add(traceWidget(w.trace, w.waveColor));
     });
     }
+    }
     return out;    
   }
   List<Widget> comboWidget(){
     return [
- 
-                    //   Center(
-                    //    child:
                          Transform(
                           transform: Matrix4.translationValues(
                             // radius *
@@ -149,55 +151,57 @@ Widget traceWidget(List trace, Color waveColor){
                               ),
                             ),
                           ),
-                       // ),
+                          
                       );
                       }
-                      )..add( Positioned(
-                          right:70.0,
-                          width:50.0,
-                          height: 900.0,
-                          top:50.0,
-                          child:
-                         Padding(
-                            padding: const EdgeInsets.only(right:20.0, top:50.0),
-                            child: Container(
-                              width: 50.0,
-                              height: double.infinity,
-                              color: Colors.blue,
-                              child: ListView(
-                                children:List.generate((comboWave.waves.length) ,(wavenum){
-                        return
-                        Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: GestureDetector(
-                                onTap: (){
-                                  setState(() {
-                                    comboWave.waves[wavenum].isShown=!comboWave.waves[wavenum].isShown;
-                                  });
-                                  
-                                },
-                                child: Container(
-                                      height: 10.0,
-                                      width: 30.0,
-                                      decoration: BoxDecoration(
-                                        color:comboWave.waves[wavenum].isShown?
-                                       comboWave.waves[wavenum].waveColor:comboWave.waves[wavenum].waveColor.withOpacity(0.5),
-                                      
-                                      ),
-                      ),
-                              ),
-                        );
-                                })
-                              
-                              ),
-                            ),
-                          )))
+                      )
+                    
                       );          
   }
 }
 
 
-
+  // ..add( Positioned(
+                      //     right:70.0,
+                      //     width:50.0,
+                      //     height: 900.0,
+                      //     top:50.0,
+                      //     child:
+                      //    Padding(
+                      //       padding: const EdgeInsets.only(right:20.0, top:50.0),
+                      //       child: Container(
+                      //         width: 50.0,
+                      //         height: double.infinity,
+                      //         color: Colors.blue,
+                      //         child: ListView(
+                      //           children:List.generate((comboWave.waves.length) ,(wavenum){
+                      //   return
+                      //   Padding(
+                      //         padding: const EdgeInsets.all(8.0),
+                      //         child: GestureDetector(
+                      //           onTap: (){
+                      //             setState(() {
+                      //               comboWave.waves[wavenum].isShown=!comboWave.waves[wavenum].isShown;
+                      //             });
+                                  
+                      //           },
+                      //           child: Container(
+                      //                 height: 10.0,
+                      //                 width: 30.0,
+                      //                 decoration: BoxDecoration(
+                      //                   color:comboWave.waves[wavenum].isShown?
+                      //                  comboWave.waves[wavenum].waveColor:comboWave.waves[wavenum].waveColor.withOpacity(0.5),
+                                      
+                      //                 ),
+                      // ),
+                      //         ),
+                      //   );
+                      //           })
+                              
+                      //         ),
+                      //       ),
+                      //     ))
+                      //     )
     //  Center(child: 
     //                     FractionalTranslation(
     //                       translation: Offset(-0.25, -0.75),

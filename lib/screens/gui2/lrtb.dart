@@ -15,7 +15,12 @@ class LRTB{
    double toW(double screenWidth)=>(right-left)*screenWidth;
    double toH(double screenHeight)=>(bottom-top)*screenHeight;
 
-
+   LRTB.fromMap(var map):
+     this.left=map["left"],
+     this.right=map["right"],
+     this.top=map["top"],
+     this.bottom=map["bottom"];
+   
    bool isWithin(Point clickLocation)=>
      (clickLocation.x > left &&
         clickLocation.x < right &&
@@ -44,9 +49,7 @@ class LRTB{
     }
     
     LRTB updateBounds(LRTB neighborBox, LRTB currentBounds){
-      // neighbor on left side
-     // currentBounds.prnt();
-     // neighborBox.prnt();
+
       if(onEdge(neighborBox))return currentBounds;
       LRTB newBounds = currentBounds;
 
@@ -74,7 +77,9 @@ class LRTB{
       return false;
     }
  }
-
+      // neighbor on left side
+     // currentBounds.prnt();
+     // neighborBox.prnt();
 
 
 

@@ -367,6 +367,157 @@
             "categories":[],
             "author" :"Abhijit V. Banerjee, Esther Duflo",
             "source" :"Poor Economics" 
+        },
+        {
+            "id":43,
+            "text":["It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, who comes short again and again, because there is no effort without error and shortcoming; but who does actually strive to do the deeds; who knows great enthusiasms, the great devotions; who spends himself in a worthy cause; who at the best knows in the end the triumph of high achievement, and who at the worst, if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid souls who neither know victory nor defeat."],
+            "categories":[],
+            "author" :"Theodore Roosevelt",
+            "source" :"Bob Iger(Tim Ferriss Show) "
+        },
+        {
+            "id":44,
+            "text":["As a tool, evolution is good for 3 things:\n",
+                "- How to get somewhere you want but can't find the route\n",
+               "-  How to get somewhere you can't imagine\n",
+               "- How to open up entirely new places to get to.\n"
+             ],
+            "categories":[],
+            "author" :"Kevin Kelly",
+            "source" :"Out of Control"
+        },
+        {
+            "id":45,
+            "text":["If you get, give. if you learn, teach" ],
+            "categories":[],
+            "author" :"Maya Angelou",
+            "source" :"Adafruit"
+        },
+        {
+            "id":46,
+            "text":["Simplicity is a great virtue but requires hard work to achieve it and education to appreciate it. And to make matters worse: complexity sells better"],
+            "categories":[],
+            "author" :"Edsger W. Dijkstra",
+            "source" :"Adafruit"
+        },
+        {
+            "id":47,
+            "text":["When you make a thing, a thing that is new, it is so complicated making it that it is bound to be ugly. But those that make it after you, they don't have to worry about making it. And they can make it pretty, and so everybody can like it when others make it after you"],
+            "categories":[],
+            "author" :"Pablo Picasso",
+            "source" :"Adafruit"
+        },
+        {
+            "id":48,
+            "text":["The opposite of a fact is falsehood, but the opposite of one profound truth may very well be another profound truth."],
+            "categories":[],
+            "author" :"Niels Bohr",
+            "source" :""
+        },
+        {
+            "id":49,
+            "text":["Yes is nothing without how"],
+            "categories":[],
+            "author" :"Chris Voss",
+            "source" :"Knowledge Project"
+        },
+        {
+            "id":50,
+            "text":["People aren't afraid to fail, they are afraid to fail in a new way"],
+            "categories":[],
+            "author" :"Chris Voss",
+            "source" :"Knowledge Project"
+        },
+        {
+            "id":51,
+            "text":["Luck favors the prepared mind"],
+            "categories":[],
+            "author" :"Pascal",
+            "source" :"Art of Doing Science and Engineering"
+        },
+        {
+            "id":52,
+            "text":["Education is what, when and why to do things. Training is how to do it."],
+            "categories":[],
+            "author" :"Richard Hamming",
+            "source" :"Art of Doing Science and Engineering"
+        },
+        {
+            "id":53,
+            "text":["In science, if you know what you are doing you should not be doing it. In engineering if you do not know what you are doing you should not be doing it."],
+            "categories":[],
+            "author" :"Richard Hamming",
+            "source" :"Art of Doing Science and Engineering"
+        },
+        {
+            "id":54,
+            "text":["In the past Engineering has been dominated to a great extent by 'what can we do,' but now 'what do we want to do' looms greater since we now have the power to design almost anything we want"],
+            "categories":[],
+            "author" :"Richard Hamming",
+            "source" :"Art of Doing Science and Engineering"
+        },
+        {
+            "id":54,
+            "text":["You must assume the responsibility for what you believe. I do not care what you think, I  just care that you do think"],
+            "categories":[],
+            "author" :"Richard Hamming",
+            "source" :"Art of Doing Science and Engineering"
+        },
+        {
+            "id":53,
+            "text":["Man will only become better when you make him see what he is"],
+            "categories":[],
+            "author" :"Anton Checkov",
+            "source" :"48 Laws of Human Nature"
+        },
+        {
+            "id":54,
+            "text":["Experimenting with the skills and options related to your personality and inclinations is not only the single most essential step in developing a higher purpose, it is perhaps the most important step in life in general. Knowing in a deep way, who you are, your uniqueness , will make it that much easier to avoid all of the other pitfalls of human nature"],
+            "categories":[],
+            "author" :"Robert Greene",
+            "source" :"48 Laws of Human Nature"
+        },
+        {
+            "id":55,
+            "text":["When people are free to do what they please, they usually imitate each other"],
+            "categories":[],
+            "author" :"Eric Hoffer",
+            "source" :"48 Laws of Human Nature"
+        },
+        {
+            "id":56,
+            "text":["Every fact of science was once damned. Every invention was once considered impossible. Every discovery was a nervous shock to some orthodoxy. Every artistic innovation was denounced as fraud and folly. We would own no more, know no more, and be no more than the first apelike hominids if it we're not for the rebellious, the recalcitrant, and the intransigent"],
+            "categories":[],
+            "author" :"Robert Anton Wilson",
+            "source" :"Fs blog gates law"
+        },
+        {
+            "id":57,
+            "text":["A stupid decision that works out well becomes a brilliant decision in hindsight"],
+            "categories":[],
+            "author" :"Daniel Kahneman",
+            "source" :""
+        },
+        {
+            "id":58,
+            "text":["Ignorance more frequently begets confidence than does knowledge."],
+            "categories":[],
+            "author" :"Charles Darwin",
+            "source" :"The Descent of Man"
+        },
+        {
+            "id":59,
+            "text":["A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system."],
+            "categories":[],
+            "author" :"Gall’s Law",
+            "source" :" @davewiner"
+        },
+        {
+            "id":60,
+            "text":["The more you know, the more you know you don't know."],
+            "categories":[],
+            "author" :"Aristotle (384 - 322 BC)",
+            "source" :""
         }
             
 ]

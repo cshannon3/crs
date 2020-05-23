@@ -68,12 +68,15 @@ Map<String, dynamic> mymodelsLib = {
     ) {
         return {
           "id": 0,
+         "loc":null,
           "name": tokens.containsKey("title")?tokens["title"]:"",
+            "url": tokens.containsKey("url")?tokens["url"]:"",
           "author":tokens.containsKey("author")?tokens["author"]:"",
           "categories": tokens.containsKey("categories")?new List<String>.from(tokens["categories"]):[],
           "year": 1999,//tokens.containsKey("year")?int.tryParse(tokens["year"]):"",
           "imgUrl": tokens.containsKey("imgUrl")?tokens["imgUrl"]:"",
           "recommendedBy": tokens.containsKey("recommendedBy")?tokens["recommendedBy"]:"",
+           "description":tokens.containsKey("description")? (tokens["description"] is List)?tokens["description"].join():tokens["description"]:"",
         };
     },
     "functions": (CustomModel self) => {
@@ -173,10 +176,10 @@ Map<String, dynamic> mymodelsLib = {
           "categories": tokens.containsKey("categories")?new List<String>.from(tokens["categories"]):[],
           "imgUrl": tokens.containsKey("imgUrl")?tokens["imgUrl"]:"",
           "description":ifIs(tokens,"description"),
+          "expanded":ifIs(tokens,"description"),
         };
     },
     "functions": (CustomModel self) => {
-          
         }
   },
 };

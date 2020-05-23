@@ -7,8 +7,9 @@ import 'package:flutter/material.dart';
 class ActiveCommentWidget extends StatefulWidget {
   final Comment comment;
   final Function(Comment) update;
+  final bool edit;
 
-  const ActiveCommentWidget({Key key, this.comment, this.update}) : super(key: key);
+  const ActiveCommentWidget({Key key, this.comment, this.update,this.edit=false}) : super(key: key);
   
   @override
   _ActiveCommentWidgetState createState() => _ActiveCommentWidgetState();
@@ -20,10 +21,11 @@ class _ActiveCommentWidgetState extends State<ActiveCommentWidget> {
   Comment comment;
   //  TextInputClient p;
   //  bool showFeedback=false;
-  bool edit=true;
+  bool edit=false;
      @override
   void initState() {
     super.initState();
+    edit= widget.edit;
   comment= widget.comment??Comment();
     commentTextInputController = new TextEditingController();
   nameInputController = new TextEditingController();
@@ -44,25 +46,25 @@ class _ActiveCommentWidgetState extends State<ActiveCommentWidget> {
              child: edit?Column(
         children: <Widget>[
           Text("Add Comment Below",
-          style: TextStyle(color: Colors.white),),
+          style: TextStyle(color: Colors.black),),
           Expanded(
                 child: TextField(
-                   style: TextStyle(color: Colors.white),
+                   style: TextStyle(color: Colors.black),
                   autofocus: true,
-                  decoration: InputDecoration(labelText: 'Comment*', hoverColor: Colors.white),
+                  decoration: InputDecoration(labelText: 'Comment*', hoverColor: Colors.black),
                   controller: commentTextInputController,
                 ),
           ),
                 Expanded(
                 child: TextField(
-                   style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(labelText: 'Name*', hoverColor: Colors.white),
+                   style: TextStyle(color: Colors.black),
+                  decoration: InputDecoration(labelText: 'Name*', hoverColor: Colors.black),
                   controller:nameInputController,
                 ),
           ),
    
                      FlatButton(
-          child: Text('Add',style: TextStyle(color: Colors.white),),
+          child: Text('Add',style: TextStyle(color: Colors.black),),
           onPressed: () {
 
         }

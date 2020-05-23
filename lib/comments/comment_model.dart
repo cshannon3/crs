@@ -15,5 +15,5 @@ class Comment {
   COMMENTTYPE type;
   List<Comment> replies;
 
-  Comment({this.commenter="", this.comment=""});
+  Comment({this.commenter="", this.comment="", this.location, });
 }
